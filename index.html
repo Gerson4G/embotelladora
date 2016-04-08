@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Embotelladora GM</title>
+
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+	
+	<section class="container">
+	
+	<article class="controls">
+	
+		<button onclick="start_process()" class="start">Iniciar</button>	
+		<button onclick="stop_process()" class="stop">Detener</button>	
+		<p >Botellas en proceso: <text id="botellas_procesando"></text></p>
+		<p>Cajas despachadas: <text  id="cajas_despachadas"></text> </p>
+		
+		<div class="speed-control">
+		<h4>Velocidad de procesos</h4>
+		<a onclick="speedDown()"href="#"><img src="images/down.png"></a>
+		<text id="speed"></text>
+		<a onclick="speedUp()" href="#"><img src="images/up.png"></a>
+		</div>
+
+	</article>
+
+	<article class="process">
+		<ul class="menu">
+			<li id="item1"><a href="#">Proceso 1</a></li>
+			<li id="item2"><a href="#">Proceso 2</a></li>
+			<li id="item3"><a href="#">Proceso 3</a></li>
+			<li id="item4"><a href="#">Proceso 4</a></li>
+			<li id="item5"><a href="#">Proceso 5</a></li>
+			<li id="item6" class="item6"><a href="#">Proceso 6</a></li>
+			<li id="item7"><a href="#">Proceso 7</a></li>
+			<li id="item8"><a href="#">Proceso 8</a></li>
+		</ul>
+	<div class="">
+		<!--AQUI IRIAN TODOS LOS PROCESOS-->
+	</div>
+
+	</article>
+
+	</section>
+
+</body>
+
+</html> 
