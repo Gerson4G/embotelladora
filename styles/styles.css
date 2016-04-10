@@ -1,0 +1,49 @@
+body{
+  font-size: 18px;
+}
+
+.proceso{
+  margin-top: 10em;
+  width: 30%;
+}
+
+.proceso1,.proceso2,.proceso3,.proceso4{
+  display: none;
+  position: relative;
+  width: 50%;
+  height: 20em;
+  margin: 0 auto;
+}
+
+.proceso4{
+  display: block;
+}
+
+#botella_4_1,#botella_4_2,#botella_4_3{
+  width: 2em;
+  height: 2em;
+  z-index: 4;
+}
+
+#cinta_4_1,#cinta_4_2,#cinta_4_3{
+height: 5em;
+width: 20em;
+z-index: 3;
+top: 1em;
+}
+
+#cinta_4_2{
+  top: 15em;
+}
+#cinta_4_3{
+  height: 9em;
+  top: 6em;
+  left: 12em;
+}
+
+
+img{
+  position: absolute;
+  width: 8em;
+  height: 10em;
+}
