@@ -42,6 +42,12 @@ empacado=false;
 left_caja_6=29;
 bajar_botella_1=bajar_botella_2=bajar_botella_3=false;
 
+//VARIABLES PROCESO 7
+top_selladora=15; //cabeza
+left_caja_7=22;
+sellado=false;
+regresando_selladora=1;
+
 
 function checkBottle() {
 
@@ -327,7 +333,52 @@ $("#botella_6_2").css({
   }
 }
 
-function sealing(){}
+function bajar_selladora(){
+  top_selladora++;
+  $("#selladora_cabeza").css({
+    "top": top_selladora+"em"
+  })
+}
+
+function subir_selladora(){
+  top_selladora--;
+  $("#selladora_cabeza").css({
+    "top": top_selladora+"em"
+  })
+}
+
+aux=false;
+aux1=1;
+movercaja7=true;
+function sealing(){
+
+  if(top_selladora>=19 && aux==false){
+    $("#caja_7").attr("src","caja2.jpg");
+    regresando_selladora=setInterval(subir_selladora,200);
+    clearInterval(aux1);
+    aux=true;
+    movercaja7=true;
+  }
+
+  if(top_selladora<=15){
+    clearInterval(regresando_selladora);
+
+  }
+
+  if(left_caja_7>=38 && sellado==false){
+    aux1=setInterval(bajar_selladora,200);
+    sellado=true;
+    movercaja7=false;
+  }
+
+  if(movercaja7==true){
+  left_caja_7++;
+
+  $("#caja_7").css({
+    "left": left_caja_7+"em"
+  })
+  }
+}
 
 function deliver(){}
 

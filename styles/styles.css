@@ -15,6 +15,8 @@ body{
   margin: 0 auto;
 }
 
+.proceso7{display: none;}
+
 .proceso5{
   margin-top: 11em;
 }
@@ -125,6 +127,33 @@ top: 12em;
 width: 11em;
 height: 8em;
 z-index: 11;
+}
+
+#selladora_cuerpo{
+  left:40em;
+  top: 6em;
+  width: 8em;
+}
+
+#selladora_cabeza{
+  left: 39.6em;
+  top:15em;
+  z-index: 10;
+  height: 4em;
+  width: 8em;
+}
+
+#cinta_7{
+top: 25em;
+width: 40em;
+height: 5em;
+}
+
+#caja_7{
+  width: 11em;
+  height: 8em;
+  top: 18em;
+  left: 22em;
 }
 
 img{
