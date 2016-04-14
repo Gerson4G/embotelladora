@@ -14,7 +14,8 @@ proceso_actual = 1;
 tempo=1;
 tempo2=1;
 tempo3=1;
-tempo4=1;
+tempo5=1;
+tempo6=1;
 cajas_despachadas=0;
 botellas_procesando=3;
 speed=500;
@@ -50,7 +51,7 @@ switch (process_number) {
 
 		break;
 	case 'item5':
-
+		showProcess(5);
 		break;
 	case 'item6':
 
@@ -127,7 +128,21 @@ function start_process(){
 
 			break;
 		case 5:
+		document.getElementById('proceso3').style.display="none";
+		document.getElementById("item"+(proceso_actual-1)).style.background="#34495e";
+		document.getElementById("item"+proceso_actual).style.background="#e74c3c";
+		document.getElementById('proceso5').style.display="block";
+			tempo5=setInterval(pushing,speed);
 			break;
+		case 6:
+		document.getElementById('proceso5').style.display="none";
+		document.getElementById("item"+(proceso_actual-1)).style.background="#34495e";
+		document.getElementById("item"+proceso_actual).style.background="#e74c3c";
+		document.getElementById('proceso6').style.display="block";
+		tempo6=setInterval(boxing,speed);
+		break;
+
+
 	}
 	started=true;
 	}
@@ -149,6 +164,10 @@ function stop_process(){
 
 				break;
 			case 5:
+			clearInterval(tempo5);
+				break;
+			case 6:
+				clearInterval(tempo6);
 				break;
 		}
 

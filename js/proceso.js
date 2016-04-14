@@ -19,8 +19,28 @@ left_tapa_2_3 = -2;
  left_etiqueta_3_2 = 2;
  left_etiqueta_3_3 = -2;
 
-///VARIABLES PROCESO 4
+///VARIABLES PROCESO 5
+top_botella_5_1 = top_botella_5_2 = 2.5;
+top_botella_5_3 = top_botella_5_4 = 16.5;
+left_botella_5_1 = 0;
+left_botella_5_2 = 3;
+ left_botella_5_3 = 1.5;
+left_botella_5_4 = 4.5;
+top_brazo_top=-6;
+top_brazo_bot=11;
+already_pushed=false;
+regresar_brazos=false;
+regresando=0;
 
+///VARIABLES PROCESO 6
+top_botella_6_1 = top_botella_6_2 = top_botella_6_3=- 2.3;
+left_botella_6_1 =4;
+left_botella_6_2 =2;
+left_botella_6_3=0;
+cambio_cinta=false;
+empacado=false;
+left_caja_6=29;
+bajar_botella_1=bajar_botella_2=bajar_botella_3=false;
 
 
 function checkBottle() {
@@ -96,7 +116,7 @@ function tag(){
 
   if(document.getElementById("botella_3_3").style.left=='39em'){
   stop_process();
-  proceso_actual++;
+  proceso_actual+=2;
   start_process();
   }
 
@@ -137,9 +157,175 @@ function tag(){
   })
 }
 
-function pushing(){}
+function retrieveArms() {
+  top_brazo_top--;
+  top_brazo_bot++;
 
-function boxing(){}
+  $("#brazo_top").css({
+    "top": top_brazo_top+"em"
+  })
+  $("#brazo_bot").css({
+    "top": top_brazo_bot+"em"
+  })
+}
+
+
+function pushing(){
+
+if(left_botella_5_1>=28){
+  stop_process();
+  proceso_actual++;
+  start_process();
+}
+else{
+if(already_pushed==true && top_brazo_top>=-6 && regresar_brazos==false){
+regresando=setInterval(retrieveArms,200);
+regresar_brazos=true;
+}
+if(top_brazo_top<=-6)
+clearInterval(regresando);
+
+left_botella_5_1+=0.2;
+left_botella_5_2+=0.2;
+left_botella_5_3+=0.2;
+left_botella_5_4+=0.2;
+
+if(top_botella_5_1>=9){
+already_pushed=true;
+}
+
+if(document.getElementById("botella_5_1").style.left=='12.2em' && already_pushed==false){
+  top_brazo_top++;
+  top_brazo_bot--;
+  top_botella_5_1++;
+  top_botella_5_2++;
+  top_botella_5_3--;
+  top_botella_5_4--;
+
+  $("#brazo_top").css({
+    "top": top_brazo_top+"em"
+  })
+  $("#brazo_bot").css({
+    "top": top_brazo_bot+"em"
+  })
+  $("#botella_5_1").css({
+    "top": top_botella_5_1+"em"
+  })
+  $("#botella_5_2").css({
+    "top": top_botella_5_2+"em"
+  })
+  $("#botella_5_3").css({
+    "top": top_botella_5_3+"em"
+  })
+  $("#botella_5_4").css({
+    "top": top_botella_5_4+"em"
+  })
+
+}
+  else{
+  $("#botella_5_1").css({
+    "left": left_botella_5_1+"em"
+  })
+  $("#botella_5_2").css({
+    "left": left_botella_5_2+"em"
+  })
+  $("#botella_5_3").css({
+    "left": left_botella_5_3+"em"
+  })
+  $("#botella_5_4").css({
+    "left": left_botella_5_4+"em"
+  })
+  }
+ }
+}
+
+function boxing(){
+
+  if(document.getElementById("caja_6").style.left=='40em'){
+  stop_process();
+  proceso_actual++;
+  start_process();
+  }
+
+  if(left_botella_6_1>=11){
+    $("#botella_6_1").css({
+    "-webkit-transform": "rotate(30deg)"
+    })
+    bajar_botella_1=true;
+  }
+  if(left_botella_6_2>=11){
+    $("#botella_6_2").css({
+    "-webkit-transform": "rotate(30deg)"
+    })
+    bajar_botella_2=true;
+  }
+  if(left_botella_6_3>=11){
+    $("#botella_6_3").css({
+    "-webkit-transform": "rotate(30deg)"
+    })
+    bajar_botella_3=true;
+  }
+
+
+if(bajar_botella_1==true){
+  top_botella_6_1++;
+  $("#botella_6_1").css({
+    "top": top_botella_6_1+"em"
+  })
+    left_botella_6_1+=0.5;
+}
+if(bajar_botella_2==true){
+  top_botella_6_2++;
+  $("#botella_6_2").css({
+    "top": top_botella_6_2+"em"
+  })
+  left_botella_6_2+=0.5
+}
+if(bajar_botella_3==true){
+  top_botella_6_3++;
+  $("#botella_6_3").css({
+    "top": top_botella_6_3+"em"
+  })
+  left_botella_6_3+=0.5
+}
+
+if(top_botella_6_1>=14)
+$("#botella_6_1").css({
+  "display": "none"
+})
+if(top_botella_6_2>=14)
+$("#botella_6_2").css({
+  "display": "none"
+})
+  if(top_botella_6_3>=14){
+    $("#botella_6_3").css({
+      "display": "none"
+    })
+    empacado=true;
+  }
+
+  if(empacado==true){
+    left_caja_6++;
+    $("#caja_6").css({
+      "left": left_caja_6+"em"
+    })
+  }
+  else{
+  left_botella_6_1++;
+  left_botella_6_2++;
+  left_botella_6_3++;
+
+  $("#botella_6_1").css({
+    "left": left_botella_6_1+"em"
+  })
+  $("#botella_6_2").css({
+    "left": left_botella_6_2+"em"
+  })
+  $("#botella_6_3").css({
+    "left": left_botella_6_3+"em"
+  })
+  }
+}
 
 function sealing(){}
 
