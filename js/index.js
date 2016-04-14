@@ -148,7 +148,7 @@ function start_process(){
 		document.getElementById("item"+(proceso_actual-1)).style.background="#34495e";
 		document.getElementById("item"+proceso_actual).style.background="#e74c3c";
 		document.getElementById('proceso7').style.display="block";
-		tempo6=setInterval(sealing,speed);
+		tempo7=setInterval(sealing,speed);
 		break;
 		case 8:
 			break;

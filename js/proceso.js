@@ -353,7 +353,7 @@ movercaja7=true;
 function sealing(){
 
   if(top_selladora>=19 && aux==false){
-    $("#caja_7").attr("src","caja2.jpg");
+    $("#caja_7").attr("src","images/caja2.jpg");
     regresando_selladora=setInterval(subir_selladora,200);
     clearInterval(aux1);
     aux=true;
