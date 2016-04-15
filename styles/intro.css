@@ -1,0 +1,62 @@
+body{
+  font-size: 16px;
+  background: lightgrey;
+}
+
+.reveal .slides .container img{
+  display: inline-block;
+  width: 35%;
+  height: 12em;
+}
+
+.reveal .slides .container .texto{
+  color: white;
+  font-size: 0.7em;
+  width: 50%;
+  height: 20%;
+  display: inline-block;
+}
+
+.container{
+  background: rgba(0,0,0,0.8);
+  border-radius: 2em;
+}
+
+.reveal .slides .container3 img{
+  display: inline-block;
+  width: 35%;
+  height: 10em;
+}
+
+.reveal .slides .container3 .texto{
+  color: white;
+  font-size: 0.5em;
+  width: 50%;
+  height: 20%;
+  display: inline-block;
+}
+
+.container3{
+  background: rgba(0,0,0,0.8);
+  border-radius: 2em;
+}
+
+.container:nth-child(2) .link{
+  margin-left: 8em;
+}
+
+.container3 .link{
+  margin-left: 6em;
+}
+
+.link{
+  margin-left: 4em;
+  background: grey;
+  border-radius: 2em;
+  width: 10em;
+}
+
+.link a{
+  text-decoration: none;
+  color: white;
+}
