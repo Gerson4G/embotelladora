@@ -1,7 +1,15 @@
-.container{
+body{
+	font-size: 18px;
+	background: lightgrey;
+}
 
-	width: 100%;
-
+.tobor{
+	background: rgba(0,0,0,0.8);
+	color: white;
+	border-radius: 2em;
+	padding: 2em;
+	overflow: hidden;
+	text-align: center;
 }
 
 .controls{
@@ -36,6 +44,17 @@ font-size: 1.2em;
 	background-color: #417cc8
 }
 
+.arrows{
+	position: relative;
+}
+
+.up, .down{
+	position: absolute;
+}
+
+.speed-control{
+	margin-top: 1em;
+}
 
 .controls .speed-control #speed{
 	position: relative;
@@ -45,8 +64,26 @@ font-size: 1.2em;
 .controls .speed-control img{
 	width: 50px;
 	height: 50px;
+	position: absolute;
+	top: -1.5em;
+	left: 5em;
 }
 
+.controls .speed-control .up{
+	left: 12em;
+}
+
+.controls .speed-control .down{
+	left: 8em;
+}
+
+.process_state{
+	background: rgba(0,0,0,0.8);
+	border-radius: 2em;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	color: white;
+}
 
 .process{
 	display: inline-block;
@@ -54,11 +91,11 @@ font-size: 1.2em;
 	vertical-align: top;
 }
 
-.menu {   
+.menu {
    margin: 50px auto;
    width: -moz-fit-content;
    width: -webkit-fit-content;
-   width: fit-content; 
+   width: fit-content;
    margin: 0;
    padding: 0;
    list-style: none;
@@ -84,7 +121,7 @@ font-size: 1.2em;
 
 .menu li:hover {
    background: #e74c3c;
-  }  
+  }
 
  .menu a {
    display: block;
@@ -93,5 +130,4 @@ font-size: 1.2em;
    text-decoration: none;
    font-family: Arial, Helvetica;
    font-size: 14px;
-  }  
-
+  }
